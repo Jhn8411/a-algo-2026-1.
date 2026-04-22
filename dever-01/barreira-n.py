@@ -1,6 +1,8 @@
 import time
 import random
 
+TAMANHOS_TESTE = [1000, 5000, 10000, 20000, 50000]
+
 def insertion_sort(arr):
     for i in range(1, len(arr)):
         key = arr[i] 
@@ -13,11 +15,10 @@ def insertion_sort(arr):
         arr[j + 1] = key
 
 def executar_experimento():
-    tamanhos_n = [1000, 5000, 10000, 20000, 50000]
     
     print("Iniciando a comparação empírica de algoritmos...\n")
     
-    for n in tamanhos_n:
+    for n in TAMANHOS_TESTE:
         print(f"--- Testando para n = {n} ---")
         
         lista_original = [random.randint(0, 100000) for _ in range(n)]
